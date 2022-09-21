@@ -7,6 +7,11 @@ class arraySet{
     private:
        std::vector<int> dataset;
     public:
+      arraySet(int* l, int count){
+        for(int i=0; i<count; i++){
+            dataset.push_back(l[i]);
+        }
+      }
        bool find(int key){
         for(int k: dataset){
             if(k == key){
@@ -32,12 +37,20 @@ class arraySet{
             }
             return false;
        }
+       int size (){
+        return dataset.size();
+       }
 };
 
 class ListSet{
     private:
        std::list<int> dataset;
     public:
+      ListSet(int* l, int count){
+        for(int i=0; i<count; i++){
+            dataset.push_back(l[i]);
+        }
+      }
        bool find(int key){
         for(int k: dataset){
             if(k == key){
@@ -63,12 +76,20 @@ class ListSet{
             }
             return false;
        }
+       int size (){
+        return dataset.size();
+       }
 };
 
 class treeSet{
     private:
        std::set<int> dataset;
     public:
+    treeSet(int* l, int count){
+        for(int i=0; i<count; i++){
+            dataset.insert(l[i]);
+        }
+      }
        bool find(int key){
         for(int k: dataset){
             if(k == key){
@@ -94,12 +115,20 @@ class treeSet{
             }
             return false;
        }
+       int size (){
+        return dataset.size();
+       }
        };
 
 class hashSet{
     private:
        std::unordered_set<int> dataset;
     public:
+    hashSet(int* l, int count){
+        for(int i=0; i<count; i++){
+            dataset.insert(l[i]);
+        }
+      }
        bool find(int key){
         for(int k: dataset){
             if(k == key){
@@ -124,5 +153,8 @@ class hashSet{
                     }
             }
             return false;
+       }
+       int size (){
+        return dataset.size();
        }
        };
